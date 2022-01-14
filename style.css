@@ -21,7 +21,7 @@ body{
 }
 .key{
     background: #fff;
-    border-radius: 10%;
+    border-radius: .4rem;
     margin: 5px;
     padding: .5rem .7rem;
     position: relative;
@@ -31,14 +31,13 @@ body{
 
 .preview{
     position: absolute;
-    top: -26px;
-    /* top: 0; */
+    top: -38px;
     left: 0;
-    /* padding: .6rem 1.2rem; */
     padding: .6rem;
     border: 1px solid #333;
     border-radius: 10%;
-    background: #fff;
+    background: rgb(241, 241, 241);
+    font-size: 18px;
     display: auto;
 }
  /* -------Display-none--------- */
@@ -58,4 +57,8 @@ body{
     margin:  auto;
     margin-top: 50px;
     margin-bottom: 80px;
+}
+
+.width-m{
+ width: 100px;
 }

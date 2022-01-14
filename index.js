@@ -5,6 +5,7 @@ const row3 = document.createElement('div')
 const row4 = document.createElement('div')
 const row5 = document.createElement('div')
 const container = document.querySelector('.container')
+const input = document.querySelector('.text-input')
 
 keyboard.classList.add('keyboard')
 
@@ -27,6 +28,10 @@ const assignkeys = (keys, row) => {
         button.appendChild(preview)
         button.classList.add('key')
         button.innerHTML += keys[key]
+        if(keys[key]===' '){
+            preview.classList.add('width-m')
+            button.classList.add('width-m')
+        }
         row.appendChild(button)
     }
     row.classList.add('row')
@@ -47,7 +52,7 @@ const preveiwKey = (key) => {
         preview.classList.remove('display-none')
         setTimeout((e)=>{
             preview.classList.add('display-none')
-        },200)
+        },250)
     }
 
 //  Adding click event on keys
@@ -57,6 +62,8 @@ const addClick = ()=>{
     const keys = document.querySelectorAll('.key')
     keys.forEach(key => {
         key.addEventListener('click',()=>{
+            input.focus();
+            input.value += key.textContent[0]
             preveiwKey(key.textContent[0])
         })
     });
