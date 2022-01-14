@@ -40,7 +40,6 @@ const assignkeys = (keys, row) => {
 }
 
 const preveiwKey = (key) => {
-        console.log('key:', key)
         let preview;
         let element = document.querySelectorAll('.preview');
         for (var i=0; i<element.length; i++) {
@@ -61,14 +60,22 @@ const addClick = ()=>{
     window.onload = ()=>{
     const keys = document.querySelectorAll('.key')
     keys.forEach(key => {
+        // OnClick
         key.addEventListener('click',()=>{
             input.focus();
             input.value += key.textContent[0]
             preveiwKey(key.textContent[0])
         })
+       
     });
    }
 }
+
+// keypress preview event
+ document.addEventListener('keypress',(e)=>{
+         preveiwKey(e.key)
+ })
+
 
 addClick()
 
